@@ -32,6 +32,8 @@
             }
         }
      #
+     # For extra informations about the `data` interface, be sure to have a look at the wiki:
+     # https://github.com/SassDoc/sassdoc/wiki/SassDoc-Data-Interface
      #}
 
     {##
