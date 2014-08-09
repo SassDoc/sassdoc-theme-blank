@@ -24,3 +24,7 @@ Note that this theme uses:
 For extra informations about building your own theme, be sure to have a
 look at [the related page](https://github.com/SassDoc/sassdoc/wiki/Using-Your-Own-Theme) in
 SassDoc's wiki.
+
+**Don't forget to `npm install` in the theme directory if you require
+it with the `--theme` option. Otherwise, this is done automatically when
+you require a theme via `npm`.**
