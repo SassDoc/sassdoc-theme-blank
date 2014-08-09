@@ -21,6 +21,12 @@ var filter = require('sassdoc-filter');
 var indexer = require('sassdoc-indexer');
 
 /**
+ * Utility function we will use to merge a default configuration
+ * with the user object.
+ */
+var extend = require('extend');
+
+/**
  * The theme function. You can directly export it like this:
  *
  *     module.exports = themeleon(__dirname, function (t) {});
