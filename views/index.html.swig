@@ -75,7 +75,7 @@
             {% for item in items %}
 
             {# At this point it is up to you to display whatever you want from your items. #}
-            <h3>{{ item.name }}</h3>
+            <h3>{{ item.context.name }}</h3>
 
             {% endfor %}
         </section>
