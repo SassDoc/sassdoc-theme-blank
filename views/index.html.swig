@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <title>Your SassDoc Theme</title>
-        <link rel="stylesheets" href="assets/css/main.css" />
+        <link rel="stylesheet" href="assets/css/main.css" />
 
         {##
          # Feel free to add more meta or stylesheets. It's up to you. 
