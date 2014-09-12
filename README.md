@@ -28,3 +28,6 @@ SassDoc's wiki.
 **Don't forget to `npm install` in the theme directory if you require
 it with the `--theme` option. Otherwise, this is done automatically when
 you require a theme via `npm`.**
+
+> *TIP: You might want to also have a look at the SassDoc [theme generator](https://github.com/SassDoc/generator-sassdoc-theme).  
+It will customize and output all the boilerplate files for you.*
