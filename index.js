@@ -1,10 +1,10 @@
 /**
- * Themeleon template helper, using the Swig module.
+ * Themeleon template helper, using consolidate.js module.
  *
  * See <https://github.com/themeleon/themeleon>.
- * See <https://github.com/themeleon/themeleon-swig>.
+ * See <https://github.com/tj/consolidate.js>.
  */
-var themeleon = require('themeleon')().use('swig')
+var themeleon = require('themeleon')().use('consolidate');
 
 /**
  * SassDoc filters (providing Markdown and other helpers).
@@ -46,6 +46,9 @@ var theme = themeleon(__dirname, function (t) {
   /**
    * Render `views/index.html.swig` with the theme's context (`ctx` below)
    * as `index.html` in the destination directory.
+   *
+   * We use Swig which is provided by consolidate.js, but many other
+   * template engines are available for you to use.
    */
   t.swig('views/index.html.swig', 'index.html')
 })
