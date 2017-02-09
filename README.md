@@ -1,6 +1,8 @@
 SassDoc Theme Boilerplate
 =========================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/SassDoc/sassdoc-theme-blank.svg)](https://greenkeeper.io/)
+
 So you want to build your own theme? You've come to the appropriate place.
 This is a blank theme so you can build yours based on this one, without
 too much hassle hopefully.
