@@ -4,32 +4,32 @@
  * See <https://github.com/themeleon/themeleon>.
  * See <https://github.com/themeleon/themeleon-swig>.
  */
-var themeleon = require('themeleon')().use('swig');
+var themeleon = require('themeleon')().use('swig')
 
 /**
  * SassDoc filters (providing Markdown and other helpers).
  *
  * See <https://github.com/SassDoc/sassdoc-filter>.
  */
-var filter = require('sassdoc-filter');
+var filter = require('sassdoc-filter')
 
 /**
  * SassDoc indexer module, to index data with a certain granularity.
  *
  * See <https://github.com/SassDoc/sassdoc-indexer>.
  */
-var indexer = require('sassdoc-indexer');
+var indexer = require('sassdoc-indexer')
 
 /**
  * Utility function we will use to merge a default configuration
  * with the user object.
  */
-var extend = require('extend');
+var extend = require('extend')
 
 /**
  * The theme function. You can directly export it like this:
  *
- *     module.exports = themeleon(__dirname, function (t) {});
+ *     module.exports = themeleon(__dirname, function (t) {})
  *
  * ... but here we want more control on the template variables, so there
  * is a little bit of preprocessing below.
@@ -41,14 +41,14 @@ var theme = themeleon(__dirname, function (t) {
    * Copy the assets folder from the theme's directory in the
    * destination directory.
    */
-  t.copy('assets');
+  t.copy('assets')
 
   /**
    * Render `views/index.html.swig` with the theme's context (`ctx` below)
    * as `index.html` in the destination directory.
    */
-  t.swig('views/index.html.swig', 'index.html');
-});
+  t.swig('views/index.html.swig', 'index.html')
+})
 
 /**
  * Actual theme function. It takes the destination directory `dest`
@@ -60,11 +60,11 @@ var theme = themeleon(__dirname, function (t) {
  */
 module.exports = function (dest, ctx) {
   if (!('view' in ctx)) {
-    ctx.view = {};
+    ctx.view = {}
   }
 
   // Extend default `view.json` with `ctx.view` object
-  ctx.view = extend(require('./view.json'), ctx.view);
+  ctx.view = extend(require('./view.json'), ctx.view)
 
   /**
    * Parse text data (like descriptions) as Markdown, and put the
@@ -75,7 +75,7 @@ module.exports = function (dest, ctx) {
    *
    * See <https://github.com/SassDoc/sassdoc-filter#markdown>.
    */
-  filter.markdown(ctx);
+  filter.markdown(ctx)
 
   /**
    * Add a `display` property for each data item regarding of display
@@ -93,7 +93,7 @@ module.exports = function (dest, ctx) {
    *
    * See <https://github.com/SassDoc/sassdoc-filter#display>.
    */
-  //filter.display(ctx);
+  // filter.display(ctx)
 
   /**
    * Allow the user to give a name to the documentation groups.
@@ -105,7 +105,7 @@ module.exports = function (dest, ctx) {
    *
    * See <https://github.com/SassDoc/sassdoc-filter#group-name>.
    */
-  //filter.groupName(ctx);
+  // filter.groupName(ctx)
 
   /**
    * Use SassDoc indexer to index the data by group and type, so we
@@ -127,11 +127,11 @@ module.exports = function (dest, ctx) {
    * You can then use `data.byGroupAndType` instead of `data` in your
    * templates to manipulate the indexed object.
    */
-  ctx.data.byGroupAndType = indexer.byGroupAndType(ctx.data);
+  ctx.data.byGroupAndType = indexer.byGroupAndType(ctx.data)
 
   /**
    * Now we have prepared the data, we can proxy to the Themeleon
    * generated theme function.
    */
-  return theme.apply(this, arguments);
-};
+  return theme.apply(this, arguments)
+}
