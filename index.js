@@ -56,11 +56,17 @@ var theme = themeleon(__dirname, function (t) {
  * configuration.
  */
 module.exports = function (dest, ctx) {
+  if (!('view' in ctx)) {
+    ctx.view = {}
+  }
   var def = require('./default.json');
 
   // Apply default values for groups and display.
   ctx.groups = extend(def.groups, ctx.groups);
   ctx.display = extend(def.display, ctx.display);
+
+  // Extend default `view.json` with `ctx.view` object
+  ctx.view = extend(require('./view.json'), ctx.view)
 
   // Extend top-level context keys.
   ctx = extend({}, def, ctx);
