@@ -17,7 +17,7 @@ Note that this theme uses:
   engine (but you could do without),
 * [Swig](http://paularmstrong.github.io/swig/) as a template engine,
   through
-  [`themeleon-swig`](https://github.com/themeleon/themeleon-swig) (but
+  [`themeleon`](https://github.com/themeleon/themeleon) (but
   you could do without).
 
 For extra informations about building your own theme, be sure to have a
